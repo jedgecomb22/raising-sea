@@ -1,5 +1,5 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.y += -20
+    mySprite.vy = -300
 })
 let mySprite: Sprite = null
 tiles.setTilemap(tilemap`level1`)
@@ -22,6 +22,7 @@ mySprite = sprites.create(img`
     . . . . . f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, controller.dx())
+controller.moveSprite(mySprite, 100, 0)
 tiles.placeOnRandomTile(mySprite, sprites.castle.tilePath5)
 scene.cameraFollowSprite(mySprite)
+mySprite.ay = 500
